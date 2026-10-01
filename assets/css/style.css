@@ -1,0 +1,464 @@
+/* Layout da Página de Login */
+.auth-page-wrapper {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2f5;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.auth-container {
+  display: flex;
+  width: 880px;
+  max-width: 95%;
+  min-height: 480px;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Coluna Esquerda - Banner Institucional */
+.auth-banner {
+  flex: 1;
+  background: linear-gradient(135deg, #073763 0%, #0b5394 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #ffffff;
+}
+
+.banner-content {
+  text-align: center;
+}
+
+.banner-logo {
+  max-width: 110px;
+  height: auto;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.banner-content h2 {
+  font-size: 1.8rem;
+  margin: 0 0 8px 0;
+  letter-spacing: 1px;
+}
+
+.banner-content p {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Coluna Direita - Formulário */
+.auth-form-container {
+  flex: 1.1;
+  padding: 35px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.auth-form-header h3 {
+  font-size: 1.5rem;
+  color: #073763;
+  margin: 0 0 4px 0;
+}
+
+.auth-form-header p {
+  color: #667085;
+  font-size: 0.85rem;
+  margin: 0 0 18px 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.82rem;
+  margin-bottom: 5px;
+  color: #344054;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0b5394;
+  box-shadow: 0 0 0 3px rgba(11, 83, 148, 0.15);
+}
+
+.btn-primary-block {
+  width: 100%;
+  padding: 11px;
+  background: #0b5394;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+
+.btn-primary-block:hover {
+  background: #073763;
+}
+
+.alert.error {
+  background: #fef3f2;
+  border: 1px solid #fda29b;
+  color: #b42318;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #98a2b3;
+  margin-top: 15px;
+}
+/* Importação de Fontes Locais */
+@font-face {
+  font-family: 'Aptos Display';
+  src: url('../fonts/Aptos-Display.woff2') format('woff2'),
+       url('../fonts/Aptos-Display.ttf') format('truetype');
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hagrid';
+  src: url('../fonts/Hagrid-Regular.woff2') format('woff2'),
+       url('../fonts/Hagrid-Regular.ttf') format('truetype');
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+/* Aplicação Global das Fontes */
+body {
+  font-family: 'Aptos Display', 'Hagrid', system-ui, -apple-system, sans-serif;
+}
+
+.banner-content h2,
+.auth-form-header h3 {
+  font-family: 'Hagrid', 'Aptos Display', sans-serif;
+  font-weight: 700;
+}
+/* --- ESTILOS DO DASHBOARD --- */
+.dashboard-body {
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.top-navbar {
+  height: 60px;
+  background: #073763;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.nav-logo {
+  height: 36px;
+  width: auto;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.9rem;
+}
+
+.btn-logout {
+  color: #ffb7b7;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  transition: background 0.2s;
+}
+
+.btn-logout:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Layout Geral */
+.dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 24px 0;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  padding: 12px 24px;
+  color: #475569;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.92rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-item:hover, .menu-item.active {
+  background: #f1f5f9;
+  color: #0b5394;
+  border-left: 4px solid #0b5394;
+}
+
+/* Conteúdo Principal */
+.main-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.page-header h2 {
+  margin: 0 0 4px 0;
+  color: #0f172a;
+}
+
+.page-header p {
+  margin: 0 0 24px 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* KPIs Grid */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.kpi-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.kpi-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: #e0f2fe;
+}
+
+.kpi-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.kpi-label {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* Layout de Conteúdo */
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.card-panel {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.panel-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.link-action {
+  color: #0b5394;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Tabelas */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.data-table th {
+  background: #f8fafc;
+  color: #475569;
+  padding: 10px 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-badge.pendente { background: #fef3c7; color: #d97706; }
+.status-badge.concluido { background: #dcfce7; color: #15803d; }
+
+/* Ações Rápidas */
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quick-btn {
+  display: block;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: all 0.2s;
+}
+
+.quick-btn:hover {
+  background: #0b5394;
+  color: #ffffff;
+  border-color: #0b5394;
+}
+/* Utilitários adicionais do Dashboard */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background: #0b5394;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #073763;
+}
+
+.btn-sm-outline {
+  border: 1px solid #0b5394;
+  color: #0b5394;
+  padding: 5px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-sm-outline:hover {
+  background: #0b5394;
+  color: #fff;
+}
+
+.empty-table {
+  text-align: center;
+  padding: 30px !important;
+  color: #94a3b8;
+  font-style: italic;
+}
