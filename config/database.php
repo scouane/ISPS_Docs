@@ -1,5 +1,3 @@
-*No database.php:*
-
 <?php
 
 $host = getenv('DB_HOST');
