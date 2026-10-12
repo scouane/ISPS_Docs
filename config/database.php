@@ -1,22 +1,16 @@
 <?php
 /**
- * Configuração da ligação à base de dados MySQL/MariaDB (XAMPP).
- * Ajusta estas constantes conforme o teu ambiente local.
+ * Configuração da ligação à base de dados MySQL/MariaDB.
+ * Compatível com ambiente local (XAMPP) e Railway.
  */
-/*
-$host="localhost";
-$port=3306;
-$socket="";
-$user="root";
-$password="";
-$dbname="isps_flow";  */
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'isps_flow');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', getenv('MYSQLHOST') ?: 'localhost');
+define('DB_PORT', getenv('MYSQLPORT') ?: '3306');
+define('DB_NAME', getenv('MYSQLDATABASE') ?: 'isps_flow');
+define('DB_USER', getenv('MYSQLUSER') ?: 'root');
+define('DB_PASS', getenv('MYSQLPASSWORD') ?: '');
 define('DB_CHARSET', 'utf8mb4');
 
-// Pasta física onde os documentos são armazenados (fora da webroot, idealmente)
+// Pasta física onde os documentos são armazenados
 define('UPLOAD_DIR', __DIR__ . '/../uploads/');
 define('MAX_UPLOAD_SIZE', 10 * 1024 * 1024); // 10 MB
 
@@ -25,7 +19,8 @@ function getDB(): PDO
     static $pdo = null;
 
     if ($pdo === null) {
-        $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=' . DB_CHARSET;
+        // Inclui explicitamente a porta para evitar conflitos de socket remoto
+        $dsn = 'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME . ';charset=' . DB_CHARSET;
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
